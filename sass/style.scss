@@ -78,16 +78,7 @@ button:hover{
     grid-template-columns: repeat(4, 1fr);
     margin-top: 20px;
     position: relative;
-    &::before {
-        content: "";
-        background-color: rgba(50, 65, 75, 0.6);
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        opacity: 60%;
-    }
+    
     
     &__item {
         min-height: 31vh;
@@ -101,9 +92,21 @@ button:hover{
         display: flex;
         justify-content: center;
         align-items: center;
+        position: relative;
+        z-index: 1;
+        &::before {
+            content: "";
+            background-color: rgba(50, 65, 75, 0.6);
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            opacity: 60%;
+        }
         
         & p{        
-        z-index: 1;
+        z-index: 2;
         }
         
         &:nth-child(1){
@@ -119,7 +122,9 @@ button:hover{
 
         &:hover {
             color: #EE640D;   
-            cursor: pointer;     
+            font-size: 24px;
+            cursor: pointer; 
+            transition-duration: 0.1s;    
         }
         
         &:hover::before{
@@ -131,6 +136,7 @@ button:hover{
             left: 0;
             right: 0;
             opacity: 92%;
+            transition-duration: 0.1s;
         }
 }   
 }
